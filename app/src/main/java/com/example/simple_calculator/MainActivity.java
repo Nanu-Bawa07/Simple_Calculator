@@ -220,8 +220,14 @@ public class MainActivity extends AppCompatActivity {
                 if (deci) {
                     //do nothing or you can show the error
                 } else {
-                    tvResult.setText(".");
-                    deci = true;
+                    if (tvResult.getText().toString().equalsIgnoreCase("0")) {
+                        tvResult.setText("0"+".");
+                        deci = true;
+                    }else {
+                        tvResult.setText(".");
+                        deci = true;
+                    }
+
                 }
             }
         });
